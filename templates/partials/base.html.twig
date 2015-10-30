@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% block head %}
+        {% block head %}
         <meta charset="utf-8" />
         <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
         {% include 'partials/metadata.html.twig' %}
@@ -27,15 +27,19 @@
         <meta name="msapplication-config" content="{{ url('theme://img/favicon/browserconfig.xml') }}">
         <meta name="theme-color" content="#663fb5">
 
-         {% block stylesheets %}
-                {% do assets.addCss('theme://css/animate.min.css') %}
-                {% do assets.addCss('theme://css/landio.css') %}
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/animate.min.css') %}
+            {% do assets.addCss('theme://css/landio.css') %}
         {% endblock %}
         {{ assets.css() }}
 
         {% endblock head%}
     </head>
-    <body id="top">
+    <body>
+        {% block navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
         {% block header %}
              {% include 'partials/header.html.twig' %}
         {% endblock %}
@@ -50,11 +54,7 @@
 
         {% block javascripts %}
             {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/waypoints.min.js') %}
-            {% do assets.addJs('theme://js/bootstrap.min.js') %}
-            {% do assets.addJs('theme://js/scripts.js') %}
-            {% do assets.addJs('theme://js/jquery.flexslider.js') %}
-            {% do assets.addJs('theme://js/modernizr.js') %}
+            {% do assets.addJs('theme://js/landio.min.js') %}
         {% endblock %}
         {{ assets.js() }}
     </body>
