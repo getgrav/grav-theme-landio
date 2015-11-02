@@ -4,14 +4,11 @@
             <div class="col-md-8 col-xl-4 col-xl-offset-4">
                 {{ content }}
 
-                {% include 'partials/messages.html.twig' %}
-
-                <span class="login-status">
-                    {% if grav.user.username %}
-                    Welcome <strong>{{ grav.user.username }}</strong>, <a class="logout" href="{{ uri.url }}/task:login.logout">Logout</a>
-                    {% endif %}
-                </span>
-
+                {% if grav.user.username %}
+                    <h3 class="p-y text-center">Welcome <strong>{{ grav.user.username }}</strong> !</h3>
+                    <a class="btn btn-primary btn-block" href="{{ uri.url }}/task:login.logout">Logout</a>
+                {% else %}
+                <h3 class="p-y text-center">Welcome <strong>guest</strong> !</h3>
                 <form method="post" action="{{ uri.url ~ page.header.form.action}}">
                     {% for field in page.header.form.fields %}
                     {% if field.type %}
@@ -25,6 +22,11 @@
                         <button type="submit" class="btn btn-primary btn-block" name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}</button>
                     </div>
                 </form>
+                {% endif %}
+                <p>
+                {% include 'partials/messages.html.twig' %}
+                </p>
+
             </div>
         </div>
     </div>
