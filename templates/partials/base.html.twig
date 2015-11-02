@@ -33,6 +33,11 @@
         {% endblock %}
         {{ assets.css() }}
 
+        {% block javascripts %}
+            {% do assets.add('jquery',101) %}
+        {% endblock %}
+        {{ assets.js() }}
+
         {% endblock head%}
     </head>
     <body>
@@ -52,10 +57,6 @@
              {% include 'partials/footer.html.twig' %}
         {% endblock %}
 
-        {% block javascripts %}
-            {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/landio.min.js') %}
-        {% endblock %}
-        {{ assets.js() }}
+        <script src="{{ url('theme://js/landio.min.js') }}" type="text/javascript" ></script>
     </body>
 </html>

@@ -38,9 +38,10 @@
                     {% endif %}
                 {% endfor %}
 
+                {% if config.plugins.simplesearch.enabled %}
                 <li class="nav-item nav-item-toggable hidden-sm-up">
                     <form class="navbar-form">
-                        {% include 'partials/navigation.html.twig' %}
+                            {% include 'partials/simplesearch_searchbox.html.twig' %}
                     </form>
                 </li>
                 <li class="navbar-divider hidden-sm-down"></li>
@@ -50,10 +51,12 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-search" aria-labelledby="dropdownMenu1">
                         <form class="navbar-form">
-                            <input class="form-control navbar-search-input" type="text" placeholder="Type your search &amp; hit Enter&hellip;">
+                                {% set form2 = true %}
+                                {% include 'partials/simplesearch_searchbox.html.twig' %}
                         </form>
                     </div>
                 </li>
+                {% endif %}
                 <li class="nav-item dropdown hidden-sm-down textselect-off">
                     <a class="nav-link dropdown-toggle nav-dropdown-user" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="img/face5.jpg" height="40" width="40" alt="Avatar" class="img-circle"> <span class="icon-caret-down"></span>
