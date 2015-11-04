@@ -4630,7 +4630,7 @@ h2 {
       right: 0;
       bottom: 35px;
       left: 0; } }
-  .social-share a {
+  .social-share a, .social-share span.social-text {
     color: #fff; }
     .social-share a span {
       margin-right: .3rem;
