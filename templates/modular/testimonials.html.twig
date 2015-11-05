@@ -1,0 +1,31 @@
+<section class="section-testimonials text-center bg-inverse">
+  <div class="container">
+    {{ page.content }}
+    <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="0">
+      <div class="carousel-inner" role="listbox">
+        {% for testimonial in page.header.testimonials|randomize %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+          <blockquote class="blockquote">
+            {% if testimonial.avatar %}
+            <img src="{{ page.media.images[testimonial.avatar].url }}" height="80" width="80" alt="Avatar" class="img-circle">
+            {% endif %}
+            {% if testimonial.quote %}
+            <p class="h3">{{ testimonial.quote }}</p>
+            {% endif %}
+            {% if testimonial.author %}
+            <footer>{{ testimonial.author }}</footer>
+            {% endif %}
+          </blockquote>
+        </div>
+        {% endfor %}
+      </div>
+      <ol class="carousel-indicators">
+        {% for testimonial in page.header.testimonials|randomize %}
+        {% if testimonial.avatar %}
+        <li {% if loop.first %}class="active"{% endif %}><img src="{{ page.media.images[testimonial.avatar].url }}" alt="Navigation avatar" data-target="#carousel-testimonials" data-slide-to="{{ loop.index0 }}" class="img-responsive img-circle"></li>
+        {% endif %}
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>
