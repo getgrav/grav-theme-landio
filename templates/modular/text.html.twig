@@ -1,0 +1,17 @@
+<section class="section-text">
+  <div class="container">
+    {{ page.content }}
+    {% for row in page.header.text|batch(2) %}
+    <div class="row p-y-lg">
+      {% for text in row %}
+      <div class="col-md-5 {% if not loop.first %}col-md-offset-2 separator-x{% endif %}">
+        <p class="wp {% if text.css_suffix %}{{ text.css_suffix }}{% endif %}">
+          {{ text.content }}
+        </p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</section>
