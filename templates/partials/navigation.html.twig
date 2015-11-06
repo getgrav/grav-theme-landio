@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-inverse bg-inverse-custom navbar-fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ site.logo.url }}">
+        <a class="navbar-brand" href="{% if not site.logo.url %}{{ base_url_absolute }}{% else %}{{ site.logo.url }}{% endif %}">
             {% if site.logo.icon %}<span class="icon-{{ site.logo.icon }}"></span>{% endif %}
             {% if site.logo.text %}<span class="sr-only">{{ site.logo.text }}</span>{% endif %}
         </a>
