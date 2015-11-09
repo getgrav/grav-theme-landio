@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-inverse bg-inverse-custom navbar-fixed-top">
+<nav class="navbar {% if page.header.navbar_class %}{{ page.header.navbar_class }}{% else %}navbar-dark bg-inverse bg-inverse-custom navbar-fixed-top{% endif %}">
     <div class="container">
         <a class="navbar-brand" href="{% if not site.logo.url %}{{ base_url_absolute }}{% else %}{{ site.logo.url }}{% endif %}">
             {% if site.logo.icon %}<span class="icon-{{ site.logo.icon }}"></span>{% endif %}
