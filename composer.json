@@ -1,8 +1,8 @@
 {
     "name": "getgrav/grav-theme-landio",
     "type": "grav-theme",
-    "description": "Land.io is a carefully crafted landing page UI kit and landing page template built on Bootstrap 4, designed by Peter Finlan and developed by Taty Grassini.",
-    "keywords": ["theme","grav", "landio", "onepage"],
+    "description": "Land.io is a carefully crafted landing page template built on Bootstrap 4, designed by Peter Finlan and developed by Taty Grassini..",
+    "keywords": ["theme","grav", "landio", "onepage", "landing"],
     "homepage": "http://getgrav.org",
     "license": "CC BY 4.0",
     "support": {

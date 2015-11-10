@@ -1,7 +1,4 @@
 enabled: true
-color: blue
-dropdown:
-  enabled: false
 
 streams:
   scheme:

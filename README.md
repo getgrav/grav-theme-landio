@@ -8,9 +8,13 @@ Landio is a responsive HTML template, built on top of [Bootstrap 4](http://v4-al
 
 * Bootstrap 4
 * Icomoon
+* Power of GRAV
 
 # Features:
 
+* Admin plugin support with customizable user area
+* VideoJS
+* Testimonials layout
 * HTML5 and CSS3
 * Fully Responsive
 * Attractive and modern design
@@ -75,8 +79,11 @@ If you want to set Landio as the default theme, you can do so by following these
 
 Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **landio** folder.
 
+# Usage
 
-## Credits
+To customize Land.io footer, header, topbar and social counts open [example configuration file](https://github.com/getgrav/grav-skeleton-landio-site/blob/develop/config/site.yaml) from Land.io skeleton. You can customize each section to fit your needs.
+
+# Credits
 
 *   [Bootstrap](http://getbootstrap.com/)
 *   [Icomoon](https://icomoon.io/)
@@ -89,7 +96,7 @@ Once this is done, you should be able to see the new theme on the frontend. Keep
 *   [Waypoints](https://github.com/imakewebthings/waypoints)
 *   [Animate.css](https://daneden.github.io/animate.css/)
 
-## Misc
+### Misc
 
 Follow Pete: [Twitter](https://twitter.com/peterfinlan), [Dribbble](http://www.dribbble.com/peterfinlan)
 
