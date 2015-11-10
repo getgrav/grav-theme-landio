@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% block head %}
+        <meta charset="utf-8" />
+        <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
+        {% include 'partials/metadata.html.twig' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ url('theme://img/favicon/apple-touch-icon-57x57.png') }}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{ url('theme://img/favicon/apple-touch-icon-60x60.png') }}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ url('theme://img/favicon/apple-touch-icon-72x72.png') }}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ url('theme://img/favicon/apple-touch-icon-76x76.png') }}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{ url('theme://img/favicon/apple-touch-icon-114x114.png') }}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{ url('theme://img/favicon/apple-touch-icon-120x120.png') }}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ url('theme://img/favicon/apple-touch-icon-144x144.png') }}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{ url('theme://img/favicon/apple-touch-icon-152x152.png') }}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url('theme://img/favicon/apple-touch-icon-180x180.png') }}">
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon/favicon-32x32.png') }}" sizes="32x32">
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon/android-chrome-192x192.png') }}" sizes="192x192">
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon/favicon-96x96.png') }}" sizes="96x96">
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon/favicon-16x16.png') }}" sizes="16x16">
+        <link rel="manifest"href="{{ url('theme://img/favicon/manifest.json') }}" />
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon/favicon.ico') }}" />
+
+        <meta name="msapplication-TileColor" content="#663fb5">
+        <meta name="msapplication-TileImage" content="{{ url('theme://img/favicon/mstile-144x144.png') }}">
+        <meta name="msapplication-config" content="{{ url('theme://img/favicon/browserconfig.xml') }}">
+        <meta name="theme-color" content="#663fb5">
+
+        {% block stylesheets %}
+            {% do assets.addCss('theme://css/animate.min.css') %}
+            {% do assets.addCss('theme://css/landio.css') %}
+        {% endblock %}
+        {{ assets.css() }}
+
+        {% block javascripts %}
+            {% do assets.add('jquery',101) %}
+        {% endblock %}
+        {{ assets.js() }}
+
+        {% endblock head%}
+    </head>
+    <body>
+        {% block navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
+        {% block header %}
+             {% include 'partials/header.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+
+        {% block footer %}
+             {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+
+        <script src="{{ url('theme://js/landio.min.js') }}" type="text/javascript" ></script>
+    </body>
+</html>

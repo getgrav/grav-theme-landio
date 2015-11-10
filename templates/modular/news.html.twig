@@ -1,0 +1,39 @@
+<section id="news" class="section-news">
+  <div class="container">
+    <h3 class="sr-only">{{ page.header.title }}</h3>
+    <div class="bg-inverse">
+      {% for row in page.header.news|batch(2) %}
+      {% for news in row %}
+      <div class="row">
+        {% if news.image %}
+        <div class="{% if loop.first %}col-md-6 p-r-0{% else %}col-md-6 col-md-push-6 p-l-0{% endif %}">
+          <figure class="has-light-mask m-b-0 image-effect">
+            <img src="{{ page.media[news.image].url }}" alt="Article thumbnail" class="img-responsive">
+          </figure>
+        </div>
+        {% endif %}
+        <div class="{% if loop.first %}col-md-6 p-l-0{% else %}col-md-6 col-md-pull-6 p-r-0{% endif %}">
+          <article class="center-block">
+            {% if news.label %}
+            <span class="label label-info">{{ news.label }}</span>
+            <br>
+            {% endif %}
+            {% if news.title %}
+            <h5><a href="{{ news.url }}">{{ news.title }} <span class="icon-arrow-right"></span></a></h5>
+            {% endif %}
+            <p class="m-b-0">
+              {% if news.tags %}
+              <a href="#"><span class="label label-default text-uppercase"><span class="icon-tag"></span>{% for item in news.tags %}{{ item }} {% endfor %}</span></a>
+              {% endif %}
+              {% if news.time %}
+              <a href="#"><span class="label label-default text-uppercase"><span class="icon-time"></span> {{ news.time }}</span></a>
+              {% endif %}
+            </p>
+          </article>
+        </div>
+      </div>
+      {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

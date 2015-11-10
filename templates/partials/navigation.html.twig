@@ -1,0 +1,142 @@
+<nav class="navbar {% if page.header.navbar_class %}{{ page.header.navbar_class }}{% else %}navbar-dark bg-inverse bg-inverse-custom navbar-fixed-top{% endif %}">
+    <div class="container">
+        <a class="navbar-brand" href="{% if not site.logo.url %}{{ base_url_absolute }}{% else %}{{ site.logo.url }}{% endif %}">
+            {% if site.logo.icon %}<span class="icon-{{ site.logo.icon }}"></span>{% endif %}
+            {% if site.logo.text %}<span class="sr-only">{{ site.logo.text }}</span>{% endif %}
+        </a>
+        <a class="navbar-toggler hidden-md-up pull-right" data-toggle="collapse" href="#collapsingNavbar" aria-expanded="false" aria-controls="collapsingNavbar">
+            &#9776;
+        </a>
+        <a class="navbar-toggler navbar-toggler-custom hidden-md-up pull-right" data-toggle="collapse" href="#collapsingMobileUser" aria-expanded="false" aria-controls="collapsingMobileUser">
+            <span class="icon-user"></span>
+        </a>
+        <div id="collapsingNavbar" class="collapse navbar-toggleable-custom" role="tabpanel" aria-labelledby="collapsingNavbar">
+            <ul class="nav navbar-nav pull-right">
+                {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+                {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+                {% for page in pages.children %}
+                {% if page.visible %}
+                {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="nav-item nav-item-toggable {{ current_page }}">
+                    <a class="nav-link" href="{{ page.url }}">
+                        {{ page.menu }}<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% for mitem in site.menu %}
+                <li class="nav-item nav-item-toggable">
+                    <a class="nav-link" href="{{ mitem.link }}">{{ mitem.text }}</a>
+                </li>
+                {% endfor %}
+                {% for module in page.collection() %}
+                {% if not module.header.hidemenu %}
+                {% set current_page = (module.active or module.activeChild) ? 'current' : '' %}
+                <li class="nav-item nav-item-toggable {{ current_module }}">
+                    <a class="nav-link" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if config.plugins.simplesearch.enabled %}
+                <li class="nav-item nav-item-toggable hidden-sm-up">
+                    <form class="navbar-form">
+                        {% include 'partials/simplesearch_searchbox.html.twig' %}
+                    </form>
+                </li>
+                <li class="navbar-divider hidden-sm-down"></li>
+                <li class="nav-item dropdown nav-dropdown-search hidden-sm-down">
+                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="icon-search"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-search" aria-labelledby="dropdownMenu1">
+                        <form class="navbar-form">
+                            {% set form2 = true %}
+                            {% include 'partials/simplesearch_searchbox.html.twig' %}
+                        </form>
+                    </div>
+                </li>
+                {% endif %}
+                {% if config.plugins.login.enabled and config.plugins.admin.enabled %}
+                {% if grav.user.username %}
+                <li class="nav-item dropdown hidden-sm-down textselect-off">
+                    {% if grav.user.email %}
+                        <a class="nav-link dropdown-toggle nav-dropdown-user" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=40" class="img-circle" alt="Gravatar"/><span class="icon-caret-down"></span>
+                        </a>
+                    {% endif %}
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-user dropdown-menu-animated" aria-labelledby="dropdownMenu2">
+                        <div class="media">
+                        {% if grav.user.email %}
+                        <div class="media-left">
+                            <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
+                        </div>
+                        {% endif %}
+                            {% if grav.user.fullname or grav.user.email %}
+                            <div class="media-body media-middle">
+                                {% if grav.user.fullname %}
+                                <h5 class="media-heading">{{ grav.user.fullname }}</h5>
+                                {% endif %}
+                                {% if grav.user.email %}
+                                <h6>{{ grav.user.email }}</h6>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <a href="{{ base_url_absolute }}/admin/pages" class="dropdown-item text-uppercase">Manage pages</a>
+                        <a href="{{ base_url_absolute }}/admin/system" class="dropdown-item text-uppercase">Configuration</a>
+                        <a href="{{ base_url_absolute }}/admin/themes" class="dropdown-item text-uppercase">Installed themes</a>
+                        {% for item in site.userlinks %}
+                            <a href="{{ item.url }}" class="dropdown-item text-uppercase">{{ item.text }}</a>
+                        {% endfor %}
+                        <a href="{{ uri.url }}/task:login.logout" class="dropdown-item text-uppercase text-muted">Log out</a>
+                        <a href="{{ base_url_absolute }}/admin/users/{{ grav.user.username }}" class="btn-circle has-gradient pull-right">
+                            <span class="sr-only">Edit</span>
+                            <span class="icon-edit"></span>
+                        </a>
+                    </div>
+                </li>
+                {% else %}
+                <li class="nav-item nav-item-toggable ">
+                    <a class="nav-link" href="login">
+                        {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}
+                    </a>
+                </li>
+                {% endif %}
+                {% endif %}
+            </ul>
+        </div>
+        {% if config.plugins.login.enabled and grav.user.username and config.plugins.admin.enabled %}
+        <div id="collapsingMobileUser" class="collapse navbar-toggleable-custom dropdown-menu-custom p-x hidden-md-up" role="tabpanel" aria-labelledby="collapsingMobileUser">
+            <div class="media m-t">
+                {% if grav.user.email %}
+                <div class="media-left">
+                    <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
+                </div>
+                {% endif %}
+                {% if grav.user.fullname or grav.user.email %}
+                <div class="media-body media-middle">
+                    {% if grav.user.fullname %}
+                    <h5 class="media-heading">{{ grav.user.fullname }}</h5>
+                    {% endif %}
+                    {% if grav.user.email %}
+                    <h6>{{ grav.user.email }}</h6>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            <a href="{{ base_url_absolute }}/admin/pages" class="dropdown-item text-uppercase">Manage pages</a>
+            <a href="{{ base_url_absolute }}/admin/system" class="dropdown-item text-uppercase">Configuration</a>
+            <a href="{{ base_url_absolute }}/admin/themes" class="dropdown-item text-uppercase">Installed themes</a>
+            {% for item in site.userlinks %}
+                <a href="{{ item.url }}" class="dropdown-item text-uppercase">{{ item.text }}</a>
+            {% endfor %}
+            <a href="{{ uri.url }}/task:login.logout" class="dropdown-item text-uppercase text-muted">Log out</a>
+            <a href="{{ base_url_absolute }}/admin/users/{{ grav.user.username }}" class="btn-circle has-gradient pull-right">
+                <span class="sr-only">Edit</span>
+                <span class="icon-edit"></span>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</nav>

@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+{% block header %}{% endblock %}
+{% block content %}
+<section class="section-text">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 col-xl-4 col-xl-offset-4">
+              <h2>{{ form.message }}</h2>
+              {{ content }}
+
+              {% include "forms/data.html.twig" %}
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}

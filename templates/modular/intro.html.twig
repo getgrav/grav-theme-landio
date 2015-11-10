@@ -1,0 +1,11 @@
+<section class="section-intro bg-faded text-center hidden-overflow">
+    <div class="container">
+        {% if page.header.title  %}
+            <h3 class="wp wp-1">{{ page.header.title }}</h3>
+        {% endif %}
+        {% if page.header.description  %}
+            <p class="lead wp wp-2">{{ page.header.description }}</p>
+        {% endif %}
+        {{ page.content }}
+    </div>
+</section>

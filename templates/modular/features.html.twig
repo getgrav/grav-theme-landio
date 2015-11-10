@@ -1,0 +1,29 @@
+<section id="features" class="section-features text-center">
+    <div class="container">
+        <div class="row">
+            {{ page.content }}
+            <div class="features-wrapper">
+                {% for item in page.header.features %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-block">
+                            {% if item.icon %}
+                                <span class="icon-{{ item.icon }}"></span>
+                            {% endif %}
+                            {% if item.title %}
+                                <h4 class="card-title">{{ item.title }}</h4>
+                            {% endif %}
+                            {% if item.subtitle %}
+                                <h6 class="card-subtitle text-muted">{{ item.subtitle }}</h6>
+                            {% endif %}
+                            {% if item.text %}
+                                <p class="card-text">{{ item.text }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

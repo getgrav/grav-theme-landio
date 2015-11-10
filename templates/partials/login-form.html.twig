@@ -1,0 +1,34 @@
+<section class="section-text">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 col-xl-4 col-xl-offset-4">
+                {{ content }}
+
+                {% if grav.user.username %}
+                    <h3 class="p-y text-center">Welcome <strong>{{ grav.user.username }}</strong> !</h3>
+                    <a class="btn btn-primary btn-block" href="{{ uri.url }}/task:login.logout">Logout</a>
+                {% else %}
+                <h3 class="p-y text-center">Welcome <strong>guest</strong> !</h3>
+                <form method="post" action="{{ uri.url ~ page.header.form.action}}">
+                    {% for field in page.header.form.fields %}
+                        {% if field.type %}
+                            <div class="form-group has-icon-left form-control-{% if field.name == 'username' %}name{% endif %}{% if field.name == 'password' %}password{% endif %}">
+                                {% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="form-actions secondary-accent">
+                        {#<a class="button secondary" href="{{ base_url_relative }}/forgot"><i class="fa fa-exclamation-circle"></i> {{ 'LOGIN_PLUGIN.BTN_FORGOT'|t }}</a>#}
+                        <button type="submit" class="btn btn-primary btn-block" name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}</button>
+                    </div>
+                </form>
+                {% endif %}
+                <p>
+                {% include 'partials/messages.html.twig' %}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>

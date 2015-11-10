@@ -1,0 +1,46 @@
+<footer class="{% if page.header.navbarfooter_class %}{{ page.header.navbarfooter_class }}{% else %}section-footer bg-inverse{% endif %}" role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-5">
+        <div class="media">
+          <div class="media-left">
+            <span class="media-object icon-logo display-1"></span>
+          </div>
+          <small class="media-body media-bottom">
+          &copy; {{ site.copyright }}
+            </small>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-7">
+        <ul class="list-inline m-b-0">
+          {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+          {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+          {% for page in pages.children %}
+          {% if page.visible %}
+          {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+          <li class="nav-item nav-item-toggable {{ current_page }}">
+              <a class="nav-link" href="{{ page.url }}">
+                  {{ page.menu }}<span class="sr-only">(current)</span>
+              </a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          {% for mitem in site.menu %}
+          <li class="nav-item nav-item-toggable">
+              <a class="nav-link" href="{{ mitem.link }}">{{ mitem.text }}</a>
+          </li>
+          {% endfor %}
+          {% for module in page.collection() %}
+          {% if not module.header.hidemenu %}
+          {% set current_page = (module.active or module.activeChild) ? 'current' : '' %}
+          <li class="nav-item nav-item-toggable {{ current_module }}">
+              <a class="nav-link" href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          <li><a class="scroll-top" href="#totop">Back to top <span class="icon-caret-up"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

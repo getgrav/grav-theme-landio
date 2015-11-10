@@ -1,0 +1,44 @@
+<header class="jumbotron bg-inverse text-center center-vertically" role="banner">
+  <div class="container">
+    <h1 class="display-3">{{ site.header.title }}</h1>
+    <h2 class="m-b-lg">{{ site.header.description }}</h2>
+    {% for item in site.header.buttons %}
+    <a class="btn btn-secondary-outline m-b-md" href="{{ item.url }}" role="button"><span class="icon-{{ item.icon }}"></span>{{ item.text }}</a>
+    {% endfor %}
+
+    <script type="text/javascript">
+        {% if site.socialcount.facebook_url %}
+        // Facebook Shares Count
+        $.getJSON( 'http://graph.facebook.com/?id={{ site.socialcount.url }}', function( fbdata ) {
+            $('#facebook-count').text(fbdata.shares)
+        });
+    {% endif %}
+    {% if site.socialcount.twitter_url %}
+        // Twitter Shares Count
+        $.getJSON( 'http://cdn.api.twitter.com/1/urls/count.json?url={{ site.socialcount.url }}&callback=?', function( twitdata ) {
+            $('#twitter-count').text(twitdata.count)
+        });
+    {% endif %}
+    {% if site.socialcount.linkedin_url %}
+        // LinkedIn Shares Count
+        $.getJSON( 'http://www.linkedin.com/countserv/count/share?url={{ site.socialcount.url }}&callback=?', function( linkdindata ) {
+            $('#linkedin-count').text(linkdindata.count)
+        });
+    {% endif %}
+    </script>
+
+    <ul class="list-inline social-share">
+        {% if site.socialcount.twitter_url %}
+            <li><a class="nav-link" href="{{ site.socialcount.twitter_url }}"><span class="icon-twitter"></span> <span class="social-text" id="twitter-count">0</span></a></li>
+        {% endif %}
+        {% if site.socialcount.facebook_url %}
+            <li><a class="nav-link" href="{{ site.socialcount.facebook_url }}"><span class="icon-facebook"></span> <span class="social-text" id="facebook-count">0</span></a></li>
+        {% endif %}
+        {% if site.socialcount.linkedin_url %}
+            <li><a class="nav-link" href="{{ site.socialcount.linkedin_url }}"><span class="icon-linkedin"></span> <span class="social-text" id="linkedin-count">0</span></a></li>
+        {% endif %}
+    </ul>
+  </div>
+
+
+</header>

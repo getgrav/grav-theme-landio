@@ -1,0 +1,46 @@
+<section id="subscriptions" class="section-pricing bg-faded text-center">
+  <div class="container">
+    {{ page.content }}
+    {% if page.header.pricing %}
+    <div class="row p-y-lg">
+      {% for item in page.header.pricing %}
+      <div class="col-md-4 {% if not item.highlighted %}p-t-md wp{% else %}stacking-top{% endif %}{% if item.additional_css %} {{ item.additional_css }}{% endif %} ">
+        <div class="card pricing-box {% if item.highlighted %}pricing-best p-x-0{% endif %}">
+          {% if item.title %}
+          <div class="card-header text-uppercase">
+            {{ item.title }}
+          </div>
+          {% endif %}
+          <div class="card-block">
+            {% if item.description %}
+            <p class="card-title">{{ item.description }}</p>
+            {% endif %}
+            <h4 class="card-text">
+              {% if item.currency %}
+              <sup class="pricing-box-currency">{{ item.currency }}</sup>
+              {% endif %}
+              {% if item.price %}
+              <span class="pricing-box-price">{{ item.price }}</span>
+              {% endif %}
+              {% if item.period %}
+              <small class="text-muted text-uppercase">{{ item.period }}</small>
+              {% endif %}
+            </h4>
+          </div>
+          {% if item.features %}
+          <ul class="list-group list-group-flush p-x">
+            {% for feature in item.features %}
+            <li class="list-group-item">{{ feature.item }}t</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          {% if item.button_text %}
+          <a href="{{ item.button_url }}" class="btn btn-primary{% if not item.highlighted %}-outline{% endif %}">{{ item.button_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
