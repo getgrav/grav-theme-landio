@@ -4258,6 +4258,10 @@ a.bg-danger:hover {
   .bg-inverse .navbar-toggler:hover {
     color: #fff; }
 
+.section-intro .introimg {
+      margin-bottom: -1rem;
+}
+
 .navbar-toggler-custom {
   margin-top: -.05rem;
   font-size: 1.55rem; }
