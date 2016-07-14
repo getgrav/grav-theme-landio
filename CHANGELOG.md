@@ -1,5 +1,5 @@
 # v1.1.0
-## xx/xx/2016
+## 07/14/2016
 
 1. [](#improved)
     * Fixed login form language strings
