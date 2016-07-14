@@ -1,4 +1,4 @@
-<div class="col-md-8 col-xl-6 col-xl-offset-3">
+<div class="col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
   <div class="alert">{{ form.message }}</div>
 
   <form name="{{ form.name }}"
@@ -10,11 +10,13 @@
 {% endfor %}
 </div>
 
-<div class="col-md-8 col-xl-6 col-xl-offset-3">
+<div class="col-md-8 col-md-offset-2 col-xl-6 col-xl-offset-3">
   <div class="form-group">
     {% for button in form.buttons %}
     <button class="btn btn-primary btn-block" type="{{ button.type|default('submit') }}">{{ button.value|default('Submit') }}</button>
     {% endfor %}
   </div>
 </div>
+
+  {{ nonce_field('form', 'form-nonce') }}
 </form>

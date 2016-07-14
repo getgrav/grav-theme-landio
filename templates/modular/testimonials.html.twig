@@ -3,7 +3,7 @@
     {{ page.content }}
     <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="0">
       <div class="carousel-inner" role="listbox">
-        {% for testimonial in page.header.testimonials|randomize %}
+        {% for testimonial in page.header.testimonials %}
         <div class="carousel-item {% if loop.first %}active{% endif %}">
           <blockquote class="blockquote">
             {% if testimonial.avatar %}
@@ -20,7 +20,7 @@
         {% endfor %}
       </div>
       <ol class="carousel-indicators">
-        {% for testimonial in page.header.testimonials|randomize %}
+        {% for testimonial in page.header.testimonials %}
         {% if testimonial.avatar %}
         <li {% if loop.first %}class="active"{% endif %}><img src="{{ page.media.images[testimonial.avatar].url }}" alt="Navigation avatar" data-target="#carousel-testimonials" data-slide-to="{{ loop.index0 }}" class="img-responsive img-circle"></li>
         {% endif %}

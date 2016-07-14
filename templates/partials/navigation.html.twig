@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 {% endif %}
-                {% if config.plugins.login.enabled and config.plugins.admin.enabled %}
+                {% if config.plugins.login.enabled %}
                 {% if grav.user.username %}
                 <li class="nav-item dropdown hidden-sm-down textselect-off">
                     {% if grav.user.email %}
@@ -99,14 +99,14 @@
                 {% else %}
                 <li class="nav-item nav-item-toggable ">
                     <a class="nav-link" href="login">
-                        {{ 'LOGIN_PLUGIN.BTN_LOGIN'|t }}
+                        {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}
                     </a>
                 </li>
                 {% endif %}
                 {% endif %}
             </ul>
         </div>
-        {% if config.plugins.login.enabled and grav.user.username and config.plugins.admin.enabled %}
+        {% if config.plugins.login.enabled and grav.user.username %}
         <div id="collapsingMobileUser" class="collapse navbar-toggleable-custom dropdown-menu-custom p-x hidden-md-up" role="tabpanel" aria-labelledby="collapsingMobileUser">
             <div class="media m-t">
                 {% if grav.user.email %}
