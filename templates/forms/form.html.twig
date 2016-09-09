@@ -1,0 +1,9 @@
+{% extends 'forms/default/form.html.twig' %}
+
+{% block inner_markup_buttons_start %}
+  <div class="form-group">
+{% endblock %}
+
+{% block button_classes %}
+class="{{ button.classes|default('btn btn-primary btn-block') }}"
+{% endblock %}
