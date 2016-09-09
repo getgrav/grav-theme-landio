@@ -12,6 +12,9 @@ keywords: landio, theme, modern, fast, responsive, html5, css3, onepage
 bugs: https://github.com/getgrav/grav-theme-landio/issues
 license: CC BY 4.0
 
+dependencies:
+    - { name: form, version: '>=2.0.2' }
+
 form:
   validation: strict
   fields:
