@@ -9,19 +9,19 @@
     <script type="text/javascript">
         {% if site.socialcount.facebook_url %}
         // Facebook Shares Count
-        $.getJSON( 'http://graph.facebook.com/?id={{ site.socialcount.url }}', function( fbdata ) {
+        $.getJSON( '//graph.facebook.com/?id={{ site.socialcount.url }}', function( fbdata ) {
             $('#facebook-count').text(fbdata.shares)
         });
     {% endif %}
     {% if site.socialcount.twitter_url %}
         // Twitter Shares Count
-        $.getJSON( 'http://cdn.api.twitter.com/1/urls/count.json?url={{ site.socialcount.url }}&callback=?', function( twitdata ) {
+        $.getJSON( '//cdn.api.twitter.com/1/urls/count.json?url={{ site.socialcount.url }}&callback=?', function( twitdata ) {
             $('#twitter-count').text(twitdata.count)
         });
     {% endif %}
     {% if site.socialcount.linkedin_url %}
         // LinkedIn Shares Count
-        $.getJSON( 'http://www.linkedin.com/countserv/count/share?url={{ site.socialcount.url }}&callback=?', function( linkdindata ) {
+        $.getJSON( '//www.linkedin.com/countserv/count/share?url={{ site.socialcount.url }}&callback=?', function( linkdindata ) {
             $('#linkedin-count').text(linkdindata.count)
         });
     {% endif %}
