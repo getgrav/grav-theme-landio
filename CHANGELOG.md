@@ -1,5 +1,5 @@
 # v1.3.0
-## xx/xx/2017
+## 01/24/2017
 
 1. [](#bugfix)
     * Update header.html.twig. Makes requests protocol independent, so no more errors that the social content is loaded over an insecure network
