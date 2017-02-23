@@ -1,4 +1,6 @@
-<section class="section-signup bg-faded">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="{{ _self.pageLinkName(page.menu) }}" class="section-signup bg-faded">
   <div class="container">
     {{ page.content }}
 

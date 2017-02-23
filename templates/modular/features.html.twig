@@ -1,4 +1,6 @@
-<section id="features" class="section-features text-center">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="{{ _self.pageLinkName(page.menu) }}" haha class="section-features text-center">
     <div class="container">
         <div class="row">
             {{ page.content }}
