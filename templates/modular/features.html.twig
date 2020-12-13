@@ -1,7 +1,7 @@
 <section id="features" class="section-features text-center">
     <div class="container">
         <div class="row">
-            {{ page.content }}
+            {{ page.content|raw }}
             <div class="features-wrapper">
                 {% for item in page.header.features %}
                 <div class="col-md-4">
