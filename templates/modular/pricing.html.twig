@@ -1,6 +1,6 @@
 <section id="subscriptions" class="section-pricing bg-faded text-center">
   <div class="container">
-    {{ page.content }}
+    {{ page.content|raw }}
     {% if page.header.pricing %}
     <div class="row p-y-lg">
       {% for item in page.header.pricing %}

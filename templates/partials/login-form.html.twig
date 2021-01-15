@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-8 col-xl-4 col-xl-offset-4">
-                {{ content }}
+                {{ content|raw }}
 
                 {% if grav.user.username %}
                     <h3 class="p-y text-center">Welcome <strong>{{ grav.user.username }}</strong> !</h3>

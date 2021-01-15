@@ -1,6 +1,6 @@
 <section class="section-text">
   <div class="container">
-    {{ page.content }}
+    {{ page.content|raw }}
     {% for row in page.header.text|batch(2) %}
     <div class="row p-y-lg">
       {% for text in row %}

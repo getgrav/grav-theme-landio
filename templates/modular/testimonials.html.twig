@@ -1,6 +1,6 @@
 <section class="section-testimonials text-center bg-inverse">
   <div class="container">
-    {{ page.content }}
+    {{ page.content|raw }}
     <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="0">
       <div class="carousel-inner" role="listbox">
         {% for testimonial in page.header.testimonials %}
