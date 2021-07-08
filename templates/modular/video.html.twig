@@ -1,6 +1,7 @@
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
 
   {% for video in page.header.videos %}
-  <section class="section-video bg-inverse text-center wp wp-4">
+  <section id="{{ _self.pageLinkName(page.menu) }}" class="section-video bg-inverse text-center wp wp-4">
   <video id="video{{ loop.index }}" class="video-js vjs-default-skin vjs-big-play-centered" controls poster="{{ page.media[video.poster].url }}" data-setup='{}'>
     {% for source in video.sources %}
       <source src="{{ source.url }}" type='{{ source.type }}'>

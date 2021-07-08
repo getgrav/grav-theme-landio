@@ -1,4 +1,6 @@
-<section class="section-testimonials text-center bg-inverse">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="{{ _self.pageLinkName(page.menu) }}" class="section-testimonials text-center bg-inverse">
   <div class="container">
     {{ page.content|raw }}
     <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="0">

@@ -1,4 +1,6 @@
-<section id="news" class="section-news">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="{{ _self.pageLinkName(page.menu) }}" class="section-news">
   <div class="container">
     <h3 class="sr-only">{{ page.header.title }}</h3>
     <div class="bg-inverse">
