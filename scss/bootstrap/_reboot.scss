@@ -13,9 +13,9 @@
 //
 // Heads up! This reset may cause conflicts with some third-party widgets. For
 // recommendations on resolving such conflicts, see
-// http://getbootstrap.com/getting-started/#third-box-sizing.
+// https://getbootstrap.com/getting-started/#third-box-sizing.
 //
-// Credit: shttp://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+// Credit: shttps://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
 html {
   box-sizing: border-box;
@@ -31,16 +31,16 @@ html {
 // Make viewport responsive
 //
 // @viewport is needed because IE 10+ doesn't honor <meta name="viewport"> in
-// some cases. See http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
+// some cases. See https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/.
 // Eventually @viewport will replace <meta name="viewport">. It's been manually
 // prefixed for forward-compatibility.
 //
 // However, `device-width` is broken on IE 10 on Windows (Phone) 8,
-// (see http://timkadlec.com/2013/01/windows-phone-8-and-device-width/ and https://github.com/twbs/bootstrap/issues/10497)
+// (see https://timkadlec.com/2013/01/windows-phone-8-and-device-width/ and https://github.com/twbs/bootstrap/issues/10497)
 // and the fix for that involves a snippet of JavaScript to sniff the user agent
 // and apply some conditional CSS.
 //
-// See http://getbootstrap.com/getting-started/#support-ie10-width for the relevant hack.
+// See https://getbootstrap.com/getting-started/#support-ie10-width for the relevant hack.
 
 
 // Wrap `@viewport` with `@at-root` for when folks do a nested import (e.g.,

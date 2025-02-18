@@ -62,14 +62,14 @@
                 <li class="nav-item dropdown hidden-sm-down textselect-off">
                     {% if grav.user.email %}
                         <a class="nav-link dropdown-toggle nav-dropdown-user" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=40" class="img-circle" alt="Gravatar"/><span class="icon-caret-down"></span>
+                            <img src="https://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=40" class="img-circle" alt="Gravatar"/><span class="icon-caret-down"></span>
                         </a>
                     {% endif %}
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-user dropdown-menu-animated" aria-labelledby="dropdownMenu2">
                         <div class="media">
                         {% if grav.user.email %}
                         <div class="media-left">
-                            <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
+                            <img src="https://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
                         </div>
                         {% endif %}
                             {% if grav.user.fullname or grav.user.email %}
@@ -111,7 +111,7 @@
             <div class="media m-t">
                 {% if grav.user.email %}
                 <div class="media-left">
-                    <img src="http://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
+                    <img src="https://www.gravatar.com/avatar/{{ grav.user.email|md5 }}?s=60" class="img-circle" alt="Gravatar"/>
                 </div>
                 {% endif %}
                 {% if grav.user.fullname or grav.user.email %}

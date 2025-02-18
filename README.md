@@ -2,7 +2,7 @@
 
 ![Landio](assets/readme_1.png)
 
-Landio is a responsive HTML template, built on top of [Bootstrap 4](http://v4-alpha.getbootstrap.com/) and based on the [Land.io Sketch design](http://tympanus.net/codrops/2015/09/16/freebie-land-io-ui-kit-landing-page-design-sketch/) by [Peter Finlan](http://peterfinlan.com/). This template and the UI kit were coded by [Taty Grassini](http://tatygrassini.github.io/).
+Landio is a responsive HTML template, built on top of [Bootstrap 4](https://v4-alpha.getbootstrap.com/) and based on the [Land.io Sketch design](https://tympanus.net/codrops/2015/09/16/freebie-land-io-ui-kit-landing-page-design-sketch/) by [Peter Finlan](https://peterfinlan.com/). This template and the UI kit were coded by [Taty Grassini](https://tatygrassini.github.io/).
 
 # Built on:
 
@@ -28,7 +28,7 @@ The theme by itself is useful, but you may have an easier time getting up and ru
 
 ## GPM Installation (Preferred)
 
-The simplest way to install this theme is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm) through your system's Terminal (also called the command line).  From the root of your Grav install type:
+The simplest way to install this theme is via the [Grav Package Manager (GPM)](https://learn.getgrav.org/advanced/grav-gpm) through your system's Terminal (also called the command line).  From the root of your Grav install type:
 
     bin/gpm install landio
 
@@ -36,13 +36,13 @@ This will install the Landio theme into your `/user/themes` directory within Gra
 
 ## Manual Installation
 
-To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `landio`. You can find these files either on [GitHub](https://github.com/getgrav/grav-theme-landio) or via [GetGrav.org](http://getgrav.org/downloads/themes).
+To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `landio`. You can find these files either on [GitHub](https://github.com/getgrav/grav-theme-landio) or via [GetGrav.org](https://getgrav.org/downloads/themes).
 
 You should now have all the theme files under
 
     /your/site/grav/user/themes/landio
 
->> NOTE: This theme is a modular component for Grav which requires the [Grav](http://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
+>> NOTE: This theme is a modular component for Grav which requires the [Grav](https://github.com/getgrav/grav), [Error](https://github.com/getgrav/grav-theme-error) and [Problems](https://github.com/getgrav/grav-plugin-problems) plugins.
 
 # Updating
 
@@ -50,7 +50,7 @@ As development for the Landio theme continues, new versions may become available
 
 ## GPM Update (Preferred)
 
-The simplest way to update this theme is via the [Grav Package Manager (GPM)](http://learn.getgrav.org/advanced/grav-gpm). You can do this with this by navigating to the root directory of your Grav install using your system's Terminal (also called command line) and typing the following:
+The simplest way to update this theme is via the [Grav Package Manager (GPM)](https://learn.getgrav.org/advanced/grav-gpm). You can do this with this by navigating to the root directory of your Grav install using your system's Terminal (also called command line) and typing the following:
 
     bin/gpm update landio
 
@@ -61,7 +61,7 @@ This command will check your Grav install to see if your Landio theme is due for
 Manually updating Landio is pretty simple. Here is what you will need to do to get this done:
 
 * Delete the `your/site/user/themes/landio` directory.
-* Download the new version of the Landio theme from either [GitHub](https://github.com/getgrav/grav-theme-landio) or [GetGrav.org](http://getgrav.org/downloads/themes).
+* Download the new version of the Landio theme from either [GitHub](https://github.com/getgrav/grav-theme-landio) or [GetGrav.org](https://getgrav.org/downloads/themes).
 * Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `landio`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
@@ -85,21 +85,21 @@ To customize Land.io footer, header, topbar and social counts open [example conf
 
 # Credits
 
-*   [Bootstrap](http://getbootstrap.com/)
+*   [Bootstrap](https://getbootstrap.com/)
 *   [Icomoon](https://icomoon.io/)
-*   [UI Faces](http://uifaces.com/)
-*   [Quotes on Design](http://quotesondesign.com/)
+*   [UI Faces](https://uifaces.com/)
+*   [Quotes on Design](https://quotesondesign.com/)
 *   [Unsplash](https://unsplash.com/)
-*   [Video JS](http://videojs.com/)
+*   [Video JS](https://videojs.com/)
 *   [Vimeo jQuery API](https://github.com/jrue/Vimeo-jQuery-API)
-*   [Chart JS](http://www.chartjs.org/)
+*   [Chart JS](https://www.chartjs.org/)
 *   [Waypoints](https://github.com/imakewebthings/waypoints)
 *   [Animate.css](https://daneden.github.io/animate.css/)
 
 ### Misc
 
-Follow Pete: [Twitter](https://twitter.com/peterfinlan), [Dribbble](http://www.dribbble.com/peterfinlan)
+Follow Pete: [Twitter](https://twitter.com/peterfinlan), [Dribbble](https://www.dribbble.com/peterfinlan)
 
 Follow Taty: [Twitter](https://twitter.com/tatygrassini), [GitHub](https://github.com/tatygrassini)
 
-Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/pages/Codrops/159107397912), [Google+](https://plus.google.com/101095823814290637419), [GitHub](https://github.com/codrops), [Pinterest](http://www.pinterest.com/codrops/)
+Follow Codrops: [Twitter](https://www.twitter.com/codrops), [Facebook](https://www.facebook.com/pages/Codrops/159107397912), [Google+](https://plus.google.com/101095823814290637419), [GitHub](https://github.com/codrops), [Pinterest](https://www.pinterest.com/codrops/)

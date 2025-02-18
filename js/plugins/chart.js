@@ -1,6 +1,6 @@
 /*!
  * Chart.js
- * http://chartjs.org/
+ * https://chartjs.org/
  * Version: 1.0.1
  *
  * Copyright 2015 Nick Downie
@@ -361,7 +361,7 @@
 		},
 		splineCurve = helpers.splineCurve = function(FirstPoint,MiddlePoint,AfterPoint,t){
 			//Props to Rob Spencer at scaled innovation for his post on splining between points
-			//http://scaledinnovation.com/analytics/splines/aboutSplines.html
+			//https://scaledinnovation.com/analytics/splines/aboutSplines.html
 			var d01=Math.sqrt(Math.pow(MiddlePoint.x-FirstPoint.x,2)+Math.pow(MiddlePoint.y-FirstPoint.y,2)),
 				d12=Math.sqrt(Math.pow(AfterPoint.x-MiddlePoint.x,2)+Math.pow(AfterPoint.y-MiddlePoint.y,2)),
 				fa=t*d01/(d01+d12),// scaling factor for triangle Ta
@@ -461,7 +461,7 @@
 		/* jshint ignore:start */
 		// Blows up jshint errors based on the new Function constructor
 		//Templating methods
-		//Javascript micro templating by John Resig - source at http://ejohn.org/blog/javascript-micro-templating/
+		//Javascript micro templating by John Resig - source at https://ejohn.org/blog/javascript-micro-templating/
 		template = helpers.template = function(templateString, valuesObject){
 
 			// If templateString is function rather than string-template - call the function for valuesObject
@@ -514,7 +514,7 @@
 		},
 		//--Animation methods
 		//Easing functions adapted from Robert Penner's easing equations
-		//http://www.robertpenner.com/easing/
+		//https://www.robertpenner.com/easing/
 		easingEffects = helpers.easingEffects = {
 			linear: function (t) {
 				return t;
@@ -663,7 +663,7 @@
 				return easingEffects.easeOutBounce(t * 2 - 1) * 0.5 + 1 * 0.5;
 			}
 		},
-		//Request animation polyfill - http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+		//Request animation polyfill - https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
 		requestAnimFrame = helpers.requestAnimFrame = (function(){
 			return window.requestAnimationFrame ||
 				window.webkitRequestAnimationFrame ||

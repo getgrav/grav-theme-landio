@@ -7,9 +7,9 @@ icon: group
 author:
   name: Team Grav
   email: devs@getgrav.org
-  url: http://getgrav.org
+  url: https://getgrav.org
 homepage: https://github.com/getgrav/grav-theme-landio
-demo: http://demo.getgrav.org/landio-skeleton
+demo: https://demo.getgrav.org/landio-skeleton
 keywords: landio, theme, modern, fast, responsive, html5, css3, onepage
 bugs: https://github.com/getgrav/grav-theme-landio/issues
 license: CC BY 4.0
