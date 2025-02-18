@@ -1,3 +1,10 @@
+# v1.5.0
+## 02/18/2025
+
+1. [](#improved)
+    * Migrated all `http://` references to `https://` to fix mixed content warnings
+    * Removed Unused JS and also social counts as those API calls are no longer available in 2025
+
 # v1.4.1
 ## 01/15/2021
 
