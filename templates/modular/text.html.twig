@@ -1,4 +1,6 @@
-<section class="section-text">
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+<section id="{{ _self.pageLinkName(page.menu) }}" class="section-text">
   <div class="container">
     {{ page.content|raw }}
     {% for row in page.header.text|batch(2) %}
